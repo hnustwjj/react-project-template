@@ -1,15 +1,19 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 
 import Discover from '@/views/discover'
 import Friend from '@/views/friends'
 const Router = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Discover />} />
-      <Route path="/friends" element={<Friend />} />
-    </Routes>
-  )
+  return useRoutes([
+    {
+      path: '/',
+      element: <Discover />
+    },
+    {
+      path: '/friend',
+      element: <Friend />
+    }
+  ])
 }
 
 export default Router
